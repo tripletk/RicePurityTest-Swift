@@ -121,6 +121,8 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -193,4 +195,49 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         return 100 - score
     }
     
-}
+    func results() -> String {
+        var results:String = ""
+        let finalScore = calculate()
+        if(finalScore == 100){
+            results = "\n\(finalScore)" + "\nWow, you are a saint!\n"
+        } else if (finalScore > 50){
+            results = "\n\(finalScore)" + "\nHmm not too bad.\n"
+        } else if (finalScore > 30){
+            results = "\n\(finalScore)" + "\nLooks like you have been having fun!\n"
+        } else if (finalScore > 10){
+            results = "\n\(finalScore)" + "\nOh my... Remember, this aint a bucket list!\n"
+        } else if (finalScore > 0) {
+            results = "\n\(finalScore)" + "\nI worry for you...\n"
+        } else {
+            results = "Congrats... but not congrats. You have completed everything.\n"
+        }
+        
+        return results
+    }
+    
+    @IBAction func calculateButtonAction(_ sender: Any) {
+        
+        var message:String = ""
+        
+                // Get clicked button title label text.
+                //let titleText:String? = src.titleLabel!.text
+        
+                //message = "\(calculate())"
+                message = results()
+        
+                // Create a UIAlertController object, you should provide title, alert message and dialog stype parameter.
+                let alertController:UIAlertController = UIAlertController(title: "Your Score Is:", message: message, preferredStyle: UIAlertController.Style.alert)
+        
+                // Create a UIAlertAction object, this object will add a button at alert dialog bottom, the button text is OK, when click it just close the alert dialog.
+                let alertAction:UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:nil)
+        
+                // Add alertAction object to alertController.
+                alertController.addAction(alertAction)
+                // Popup the alert dialog.
+                present(alertController, animated: true, completion: nil)
+        
+            }
+    }
+
+    
+

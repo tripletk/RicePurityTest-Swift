@@ -73,7 +73,11 @@
                         <viewLayoutGuide key="safeArea" id="gqc-EE-Kii"/>
                     </view>
                     <navigationItem key="navigationItem" id="NQr-ph-QE1">
-                        <barButtonItem key="rightBarButtonItem" title="Calculate!" style="plain" id="JU4-8o-rbJ"/>
+                        <barButtonItem key="rightBarButtonItem" title="Calculate!" style="plain" id="JU4-8o-rbJ">
+                            <connections>
+                                <action selector="calculateButtonAction:" destination="ysn-75-HJ7" id="HPR-66-zFS"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="calculateButton" destination="JU4-8o-rbJ" id="fY9-41-de2"/>
