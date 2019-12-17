@@ -10,27 +10,75 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="bpY-bz-faf">
             <objects>
-                <viewController id="Ew6-cA-oka" sceneMemberID="viewController">
+                <viewController id="Ew6-cA-oka" customClass="mainViewController" customModule="RicePurityTest2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="A3G-1b-sGX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBm-S6-JDN">
-                                <rect key="frame" x="123" y="538" width="169" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nBm-S6-JDN">
+                                <rect key="frame" x="30" y="504.5" width="354" height="30"/>
                                 <state key="normal" title="Take the Rice Purity Test"/>
                                 <connections>
                                     <segue destination="ysn-75-HJ7" kind="show" id="Mz8-9F-KHc"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vnI-AV-ezU">
+                                <rect key="frame" x="30" y="208" width="354" height="183"/>
+                                <string key="text">The Purity Test has historically served as a segue from O-week to true college life at Rice.
+It's a voluntary opportunity for O-week groups to bond, and for students to track the maturation
+of their experiences throughout college. After becoming a global phenomena, this test has been used by people all over the world to track their maturation.</string>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Caution: This is not a bucket list. Completion of all items on this test will likely result in death." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcY-b3-lK7">
+                                <rect key="frame" x="30" y="421" width="354" height="33.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This app and developer are in no way affiliated with Rice University or other Rice Purity tests." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HP5-wt-Y4k">
+                                <rect key="frame" x="30" y="842" width="354" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="HP5-wt-Y4k" secondAttribute="bottom" constant="30" id="72x-VK-CUT"/>
+                            <constraint firstItem="EcY-b3-lK7" firstAttribute="top" secondItem="vnI-AV-ezU" secondAttribute="bottom" constant="30" id="9KM-qe-P17"/>
+                            <constraint firstItem="HP5-wt-Y4k" firstAttribute="leading" secondItem="chl-mW-cDR" secondAttribute="leading" constant="30" id="AoJ-Ih-mAN"/>
+                            <constraint firstItem="vnI-AV-ezU" firstAttribute="leading" secondItem="chl-mW-cDR" secondAttribute="leading" constant="30" id="B9R-JT-fth"/>
+                            <constraint firstItem="nBm-S6-JDN" firstAttribute="leading" secondItem="chl-mW-cDR" secondAttribute="leading" constant="30" id="Cdj-x3-m29"/>
+                            <constraint firstItem="vnI-AV-ezU" firstAttribute="top" secondItem="chl-mW-cDR" secondAttribute="top" constant="120" id="DdZ-St-D1V"/>
+                            <constraint firstItem="nBm-S6-JDN" firstAttribute="top" secondItem="EcY-b3-lK7" secondAttribute="bottom" constant="50" id="Ids-XM-gpK"/>
+                            <constraint firstItem="chl-mW-cDR" firstAttribute="trailing" secondItem="HP5-wt-Y4k" secondAttribute="trailing" constant="30" id="Twz-oG-BhI"/>
+                            <constraint firstItem="EcY-b3-lK7" firstAttribute="leading" secondItem="chl-mW-cDR" secondAttribute="leading" constant="30" id="W63-i0-cpj"/>
+                            <constraint firstItem="chl-mW-cDR" firstAttribute="trailing" secondItem="vnI-AV-ezU" secondAttribute="trailing" constant="30" id="Z2J-u6-VEX"/>
+                            <constraint firstItem="chl-mW-cDR" firstAttribute="trailing" secondItem="EcY-b3-lK7" secondAttribute="trailing" constant="30" id="ZIj-b2-dIJ"/>
+                            <constraint firstItem="chl-mW-cDR" firstAttribute="trailing" secondItem="nBm-S6-JDN" secondAttribute="trailing" constant="30" id="bJB-qI-jhm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="chl-mW-cDR"/>
                     </view>
-                    <navigationItem key="navigationItem" id="tnq-mJ-qVp"/>
+                    <navigationItem key="navigationItem" id="tnq-mJ-qVp">
+                        <barButtonItem key="leftBarButtonItem" title="Info" style="plain" id="L4R-Ax-I3T">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jWr-go-FZc">
+                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Info"/>
+                            </button>
+                            <connections>
+                                <action selector="infoButtonAction:" destination="Ew6-cA-oka" id="1qx-oK-z60"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="infoButton" destination="L4R-Ax-I3T" id="FT3-Tq-4RK"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AdN-S7-LaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

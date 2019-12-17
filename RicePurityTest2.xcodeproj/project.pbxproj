@@ -12,6 +12,7 @@
 		EA6902A023A8A8F200C8352E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA69029E23A8A8F200C8352E /* LaunchScreen.storyboard */; };
 		EA6902A823A8AC8800C8352E /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6902A723A8AC8800C8352E /* Storyboard.storyboard */; };
 		EA6902AA23A8AFF300C8352E /* tableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6902A923A8AFF300C8352E /* tableViewController.swift */; };
+		EA6902AC23A8DDFE00C8352E /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6902AB23A8DDFE00C8352E /* mainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		EA6902A123A8A8F200C8352E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA6902A723A8AC8800C8352E /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		EA6902A923A8AFF300C8352E /* tableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewController.swift; sourceTree = "<group>"; };
+		EA6902AB23A8DDFE00C8352E /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 			children = (
 				EA69029523A8A8F000C8352E /* AppDelegate.swift */,
 				EA6902A923A8AFF300C8352E /* tableViewController.swift */,
+				EA6902AB23A8DDFE00C8352E /* mainViewController.swift */,
 				EA6902A723A8AC8800C8352E /* Storyboard.storyboard */,
 				EA69029C23A8A8F200C8352E /* Assets.xcassets */,
 				EA69029E23A8A8F200C8352E /* LaunchScreen.storyboard */,
@@ -137,6 +140,7 @@
 			files = (
 				EA69029623A8A8F000C8352E /* AppDelegate.swift in Sources */,
 				EA6902AA23A8AFF300C8352E /* tableViewController.swift in Sources */,
+				EA6902AC23A8DDFE00C8352E /* mainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

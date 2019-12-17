@@ -2,7 +2,7 @@
 //  tableView.swift
 //  RicePurityTest2
 //
-//  Created by Timmy Tseng on 12/17/19.
+//  Created by Kaung Khant Kyaw (Timmy) on 12/17/19.
 //  Copyright © 2019 kaungkhantkyaw. All rights reserved.
 //
 
@@ -14,7 +14,7 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var calculateButton: UIBarButtonItem!
     @IBOutlet weak var questionsTableView: UITableView!
     
-    private var score = 0
+    private var numberChecked = 0
     
     let sections = ["Click on every item you have done. MPS stands for Member of the Preferred Sex"]
     var questions = ["Held hands romantically?" ,
@@ -150,10 +150,10 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Create an object of the dynamic cell "PlainCell"
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlainCell", for: indexPath)
         // Depending on the section, fill the textLabel with the relevant text
-
+        
         
         //cell.accessoryType = UITableViewCell.AccessoryType.checkmark
-       // cell.accessoryType = UITableViewCell.AccessoryType ? .checkmark : .none
+        // cell.accessoryType = UITableViewCell.AccessoryType ? .checkmark : .none
         
         cell.textLabel?.text = questions[indexPath.row]
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
@@ -164,9 +164,9 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        score += 1
+        numberChecked += 1
         NSLog("Added 1 to score")
-        NSLog("Current Score is: %i",score)
+        NSLog("Current Score is: %i",numberChecked)
         
         //let selected = questions[indexPath.row]
         tableView.allowsMultipleSelection = true
@@ -178,21 +178,21 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
-        score -= 1
+        numberChecked -= 1
         NSLog("Subtracted 1 from score")
-        NSLog("Current Score is: %i",score)
+        NSLog("Current Score is: %i",numberChecked)
         
         let cell = tableView.cellForRow(at: indexPath)
-//        if let cell = tableView.cellForRow(at: indexPath) {
-//            cell.accessoryType = .none
-//        }
+        //        if let cell = tableView.cellForRow(at: indexPath) {
+        //            cell.accessoryType = .none
+        //        }
         if (cell?.accessoryType == .checkmark){
             cell?.accessoryType = .none
         }
     }
     
     func calculate() -> Int {
-        return 100 - score
+        return 100 - numberChecked
     }
     
     func results() -> String {
@@ -219,25 +219,22 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         var message:String = ""
         
-                // Get clicked button title label text.
-                //let titleText:String? = src.titleLabel!.text
+        // Get clicked button title label text.
+        message = results()
         
-                //message = "\(calculate())"
-                message = results()
+        // Create a UIAlertController object, you should provide title, alert message and dialog stype parameter.
+        let alertController:UIAlertController = UIAlertController(title: "Your Score Is:", message: message, preferredStyle: UIAlertController.Style.alert)
         
-                // Create a UIAlertController object, you should provide title, alert message and dialog stype parameter.
-                let alertController:UIAlertController = UIAlertController(title: "Your Score Is:", message: message, preferredStyle: UIAlertController.Style.alert)
+        // Create a UIAlertAction object, this object will add a button at alert dialog bottom, the button text is OK, when click it just close the alert dialog.
+        let alertAction:UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:nil)
         
-                // Create a UIAlertAction object, this object will add a button at alert dialog bottom, the button text is OK, when click it just close the alert dialog.
-                let alertAction:UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:nil)
+        // Add alertAction object to alertController.
+        alertController.addAction(alertAction)
+        // Popup the alert dialog.
+        present(alertController, animated: true, completion: nil)
         
-                // Add alertAction object to alertController.
-                alertController.addAction(alertAction)
-                // Popup the alert dialog.
-                present(alertController, animated: true, completion: nil)
-        
-            }
     }
+}
 
-    
+
 
