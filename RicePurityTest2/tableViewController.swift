@@ -17,7 +17,7 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     private var numberChecked = 0
     
     let sections = ["Click on every item you have done. MPS stands for Member of the Preferred Sex"]
-    var questions = ["Held hands romantically?" ,
+    let questions = ["Held hands romantically?" ,
                      "Been on a date?" ,
                      "Been in a relationship?",
                      "Danced without leaving room for Jesus?",
@@ -120,11 +120,11 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        
+
         // Do any additional setup after loading the view, typically from a nib.
     }
+    
+    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         tableView.rowHeight = UITableView.automaticDimension
@@ -152,6 +152,7 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         // Depending on the section, fill the textLabel with the relevant text
         
         
+        
         //cell.accessoryType = UITableViewCell.AccessoryType.checkmark
         // cell.accessoryType = UITableViewCell.AccessoryType ? .checkmark : .none
         
@@ -166,7 +167,7 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         numberChecked += 1
         NSLog("Added 1 to score")
-        NSLog("Current Score is: %i",numberChecked)
+        NSLog("# of Checkmarks: %i",numberChecked)
         
         //let selected = questions[indexPath.row]
         tableView.allowsMultipleSelection = true
@@ -180,7 +181,7 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         numberChecked -= 1
         NSLog("Subtracted 1 from score")
-        NSLog("Current Score is: %i",numberChecked)
+        NSLog("# of Checkmarks: %i",numberChecked)
         
         let cell = tableView.cellForRow(at: indexPath)
         //        if let cell = tableView.cellForRow(at: indexPath) {
