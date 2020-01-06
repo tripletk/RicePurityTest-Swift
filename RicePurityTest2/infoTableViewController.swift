@@ -12,7 +12,7 @@ import UIKit
 class infoTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     let sections = ["Information"]
-    let questions = ["Developed by Kyaw Tech. Copyright 2020, Developers: Kaung Khant Kyaw", "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum ", "Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum " ]
+    let infoText = ["The items on this application’s Rice Purity Test are from http://ricepuritytest.com and might have some modifications from those found on that site. Kaung Khant Kyaw and this application are in no way affiliated with the University of Rice, the original researchers, or any other online Rice Purity test found online.", "Rice purity test is a test created by Rice University in 1924 for the purpose of checking the maturity level and building a good bonding of their fresher students with their seniors. The data was used for the research purposes. Texas-based University of Rice is trying to research more about the intimate life of a human being. This application is not going to reveal your information or data and is not affiliated with that research.", "Rice Purity Test the App and its developers are in no way affiliated with the University of Rice, its researchers and other Rice Purity Score Tests found elsewhere.","Developed by Kyaw Tech. Copyright 2020, Developers: Kaung Khant Kyaw" ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +39,12 @@ class infoTableViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return questions.count
+        return infoText.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create an object of the dynamic cell "PlainCell"
-        let cell = tableView.dequeueReusableCell(withIdentifier: "PlainCell", for: indexPath)
+        let cell2 = tableView.dequeueReusableCell(withIdentifier: "InfoPlainCell", for: indexPath)
         // Depending on the section, fill the textLabel with the relevant text
         
         //tableView.allowsMultipleSelection = true
@@ -52,38 +52,13 @@ class infoTableViewController: UIViewController, UITableViewDataSource, UITableV
         //cell.accessoryType = UITableViewCell.AccessoryType.checkmark
         // cell.accessoryType = UITableViewCell.AccessoryType ? .checkmark : .none
         
-        cell.textLabel?.text = questions[indexPath.row]
-        cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
-        cell.textLabel?.numberOfLines = 0
+        cell2.textLabel?.text = infoText[indexPath.row]
+        cell2.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
+        cell2.textLabel?.numberOfLines = 0
         // Return the configured cell
-        return cell
+        return cell2
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        
-        
-        tableView.allowsMultipleSelection = true
-        
-        if let cell = tableView.cellForRow(at: indexPath) {
-            cell.accessoryType = .checkmark
-        }
-        
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        
-        
-        let cell = tableView.cellForRow(at: indexPath)
-        
-        //        if let cell = tableView.cellForRow(at: indexPath) {
-        //            cell.accessoryType = .none
-        //        }
-        
-        if (cell?.accessoryType == .checkmark){
-            cell?.accessoryType = .none
-        }
-    }
     
 }
 
