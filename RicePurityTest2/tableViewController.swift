@@ -151,7 +151,7 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlainCell", for: indexPath)
         // Depending on the section, fill the textLabel with the relevant text
         
-        
+        //tableView.allowsMultipleSelection = true
         
         //cell.accessoryType = UITableViewCell.AccessoryType.checkmark
         // cell.accessoryType = UITableViewCell.AccessoryType ? .checkmark : .none
@@ -169,12 +169,13 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         NSLog("Added 1 to score")
         NSLog("# of Checkmarks: %i",numberChecked)
         
-        //let selected = questions[indexPath.row]
+        
         tableView.allowsMultipleSelection = true
         
         if let cell = tableView.cellForRow(at: indexPath) {
             cell.accessoryType = .checkmark
         }
+        
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
@@ -184,9 +185,11 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         NSLog("# of Checkmarks: %i",numberChecked)
         
         let cell = tableView.cellForRow(at: indexPath)
+        
         //        if let cell = tableView.cellForRow(at: indexPath) {
         //            cell.accessoryType = .none
         //        }
+        
         if (cell?.accessoryType == .checkmark){
             cell?.accessoryType = .none
         }

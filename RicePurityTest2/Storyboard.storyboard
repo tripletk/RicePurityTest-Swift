@@ -65,24 +65,32 @@ of their experiences throughout college. After becoming a global phenomena, this
                         <viewLayoutGuide key="safeArea" id="chl-mW-cDR"/>
                     </view>
                     <navigationItem key="navigationItem" id="tnq-mJ-qVp">
-                        <barButtonItem key="leftBarButtonItem" title="Info" style="plain" id="L4R-Ax-I3T">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="jWr-go-FZc">
-                                <rect key="frame" x="20" y="7" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Info"/>
-                            </button>
+                        <barButtonItem key="leftBarButtonItem" systemItem="bookmarks" id="iuM-px-02R">
                             <connections>
-                                <action selector="infoButtonAction:" destination="Ew6-cA-oka" id="1qx-oK-z60"/>
+                                <segue destination="m9x-4w-2M3" kind="show" id="D9w-Bl-feT"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
-                    <connections>
-                        <outlet property="infoButton" destination="L4R-Ax-I3T" id="FT3-Tq-4RK"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AdN-S7-LaV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-344.92753623188406" y="-548.4375"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mnI-TC-Kxy">
+            <objects>
+                <viewController id="m9x-4w-2M3" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="W19-lh-cR0">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="6Hl-Rr-FQa"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Pc-Za-lLW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Er0-wI-BTI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="622" y="-548"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="jbI-SV-JVr">
@@ -171,6 +179,58 @@ of their experiences throughout college. After becoming a global phenomena, this
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Fq-33-N4n" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1255" y="208"/>
+        </scene>
+        <!--Info Table View Controller-->
+        <scene sceneID="XD6-lB-bA1">
+            <objects>
+                <viewController id="oOx-sW-cOj" customClass="infoTableViewController" customModule="RicePurityTest2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="p6D-FH-arw">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="gCZ-oI-9tF">
+                                <rect key="frame" x="0.0" y="44" width="414" height="852"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PlainCell" id="gKg-Tm-gtL">
+                                        <rect key="frame" x="0.0" y="55.5" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gKg-Tm-gtL" id="5Nr-nt-MMC">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="oOx-sW-cOj" id="zTB-XL-KEC"/>
+                                    <outlet property="delegate" destination="oOx-sW-cOj" id="jCU-KK-UES"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="gCZ-oI-9tF" secondAttribute="bottom" id="72Y-5r-IPP"/>
+                            <constraint firstItem="gCZ-oI-9tF" firstAttribute="top" secondItem="QZr-k6-TGx" secondAttribute="top" id="ZuU-fV-Rrl"/>
+                            <constraint firstItem="gCZ-oI-9tF" firstAttribute="trailing" secondItem="QZr-k6-TGx" secondAttribute="trailing" id="iMv-nv-jAh"/>
+                            <constraint firstItem="gCZ-oI-9tF" firstAttribute="leading" secondItem="QZr-k6-TGx" secondAttribute="leading" id="uFC-dc-Evi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="QZr-k6-TGx"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="azz-x1-wz3">
+                        <barButtonItem key="rightBarButtonItem" title="Calculate!" style="plain" id="8Gs-s0-A5e">
+                            <connections>
+                                <action selector="calculateButtonAction:" destination="oOx-sW-cOj" id="4vp-ra-YHd"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="calculateButton" destination="8Gs-s0-A5e" id="zgN-CE-jen"/>
+                        <outlet property="questionsTableView" destination="gCZ-oI-9tF" id="AMk-0t-pFd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AKb-19-zJ9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="622" y="-1254"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
