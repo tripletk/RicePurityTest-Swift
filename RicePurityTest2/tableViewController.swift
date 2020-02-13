@@ -15,6 +15,7 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var questionsTableView: UITableView!
     
     private var numberChecked = 0
+    private var checkedItems: [Int] = []
     
     let sections = ["Click on every item you have done. MPS stands for Member of the Preferred Sex"]
     let questions = ["Held hands romantically?" ,
@@ -120,7 +121,12 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .light
+        } else {
+            // Fallback on earlier versions
+        }
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
     
@@ -164,6 +170,10 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         if (cell.accessoryType == .checkmark){
             cell.accessoryType = .none
         }
+        if(checkedItems.contains(indexPath.row)){
+            cell.accessoryType = .checkmark
+        }
+           
         
         // Return the configured cell
         return cell
@@ -174,7 +184,8 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         numberChecked += 1
         NSLog("Added 1 to score")
         NSLog("# of Checkmarks: %i",numberChecked)
-        
+        checkedItems.append(indexPath.row)
+        print(checkedItems)
         
         tableView.allowsMultipleSelection = true
         
@@ -189,6 +200,8 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         numberChecked -= 1
         NSLog("Subtracted 1 from score")
         NSLog("# of Checkmarks: %i",numberChecked)
+        checkedItems.remove(at: checkedItems.firstIndex(of: indexPath.row)!)
+        print(checkedItems)
         
         let cell = tableView.cellForRow(at: indexPath)
         
