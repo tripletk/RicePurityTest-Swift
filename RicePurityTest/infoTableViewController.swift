@@ -1,6 +1,6 @@
 //
 //  infoTableViewController.swift
-//  RicePurityTest2
+//  RicePurityTest
 //
 //  Created by Timmy Tseng on 12/21/19.
 //  Copyright © 2019 kaungkhantkyaw. All rights reserved.

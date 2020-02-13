@@ -1,6 +1,6 @@
 //
 //  tableView.swift
-//  RicePurityTest2
+//  RicePurityTest
 //
 //  Created by Kaung Khant Kyaw (Timmy) on 12/17/19.
 //  Copyright © 2019 kaungkhantkyaw. All rights reserved.
