@@ -159,6 +159,12 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         cell.textLabel?.text = questions[indexPath.row]
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.textLabel?.numberOfLines = 0
+        
+        // test 2020
+        if (cell.accessoryType == .checkmark){
+            cell.accessoryType = .none
+        }
+        
         // Return the configured cell
         return cell
     }
