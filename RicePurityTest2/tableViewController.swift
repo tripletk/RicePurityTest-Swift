@@ -14,7 +14,9 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     @IBOutlet weak var calculateButton: UIBarButtonItem!
     @IBOutlet weak var questionsTableView: UITableView!
     
+    // numberChecked is the number of cell items checked in test
     private var numberChecked = 0
+    // checkedItems is array of integers of selected rows
     private var checkedItems: [Int] = []
     
     let sections = ["Click on every item you have done. MPS stands for Member of the Preferred Sex"]
@@ -121,6 +123,8 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Overriding Dark mode in iOS 13 and newer
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } else {
@@ -157,30 +161,26 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "PlainCell", for: indexPath)
         // Depending on the section, fill the textLabel with the relevant text
         
-        //tableView.allowsMultipleSelection = true
-        
-        //cell.accessoryType = UITableViewCell.AccessoryType.checkmark
-        // cell.accessoryType = UITableViewCell.AccessoryType ? .checkmark : .none
-        
         cell.textLabel?.text = questions[indexPath.row]
         cell.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell.textLabel?.numberOfLines = 0
         
-        // test 2020
+        // The Following Two If Statements handle the checkmarks
+        // Firstly removes any checkmarks in requeued or dequeued cells
         if (cell.accessoryType == .checkmark){
             cell.accessoryType = .none
         }
+        // Secondly, enables a checkmark if row requeued is one of the selected rows listed in checkedItems Array
         if(checkedItems.contains(indexPath.row)){
             cell.accessoryType = .checkmark
         }
-           
-        
         // Return the configured cell
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        // Console Tracker for Select Action
         numberChecked += 1
         NSLog("Added 1 to score")
         NSLog("# of Checkmarks: %i",numberChecked)
@@ -197,6 +197,7 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
         
+        // Console Tracker for Deselect Action
         numberChecked -= 1
         NSLog("Subtracted 1 from score")
         NSLog("# of Checkmarks: %i",numberChecked)
@@ -205,22 +206,15 @@ class tableViewController: UIViewController, UITableViewDataSource, UITableViewD
         
         let cell = tableView.cellForRow(at: indexPath)
         
-        //        if let cell = tableView.cellForRow(at: indexPath) {
-        //            cell.accessoryType = .none
-        //        }
-        
         if (cell?.accessoryType == .checkmark){
             cell?.accessoryType = .none
         }
     }
+ 
     
-    func calculate() -> Int {
-        return 100 - numberChecked
-    }
-    
-    func results() -> String {
+    func results() -> String { //Function called when calculate button is pressed prompting the results to be calculated
         var results:String = ""
-        let finalScore = calculate()
+        let finalScore = 100 - numberChecked
         if(finalScore == 100){
             results = "\n\(finalScore)" + "\nWow, you are a saint!\n"
         } else if (finalScore > 50){

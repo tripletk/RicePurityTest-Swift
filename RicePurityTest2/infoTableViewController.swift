@@ -16,6 +16,8 @@ class infoTableViewController: UIViewController, UITableViewDataSource, UITableV
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Overriding Dark mode in iOS 13 and newer
         if #available(iOS 13.0, *) {
             overrideUserInterfaceStyle = .light
         } else {
@@ -50,12 +52,6 @@ class infoTableViewController: UIViewController, UITableViewDataSource, UITableV
         // Create an object of the dynamic cell "PlainCell"
         let cell2 = tableView.dequeueReusableCell(withIdentifier: "InfoPlainCell", for: indexPath)
         // Depending on the section, fill the textLabel with the relevant text
-        
-        //tableView.allowsMultipleSelection = true
-        
-        //cell.accessoryType = UITableViewCell.AccessoryType.checkmark
-        // cell.accessoryType = UITableViewCell.AccessoryType ? .checkmark : .none
-        
         cell2.textLabel?.text = infoText[indexPath.row]
         cell2.textLabel?.lineBreakMode = NSLineBreakMode.byWordWrapping
         cell2.textLabel?.numberOfLines = 0
