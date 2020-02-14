@@ -1,7 +1,8 @@
 # RicePurityTest-Swift
 An iPhone app written in Swift based on the Viral Rice Purity Test. The app is a local mobile version of the various websites found online of the Rice Purity Score. Developed by Kaung Khant Kyaw.
 
-![Alt text](RicePurityTest/Assets.xcassets/Screenshot Promo.imageset/Screenshot Promo.jpg)
+![alt text](https://raw.githubusercontent.com/tripletk/RicePurityTest/Assets.xcassets/Screenshot Promo.imageset/Screenshot Promo.jpg)
+
 
 Developer: Kaung Khant Kyaw.
 Language: Swift
