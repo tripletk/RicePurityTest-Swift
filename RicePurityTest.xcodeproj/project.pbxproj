@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		EA69029623A8A8F000C8352E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA69029523A8A8F000C8352E /* AppDelegate.swift */; };
-		EA69029D23A8A8F200C8352E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA69029C23A8A8F200C8352E /* Assets.xcassets */; };
 		EA6902A823A8AC8800C8352E /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA6902A723A8AC8800C8352E /* Storyboard.storyboard */; };
 		EA6902AA23A8AFF300C8352E /* tableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6902A923A8AFF300C8352E /* tableViewController.swift */; };
 		EA6902AC23A8DDFE00C8352E /* mainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA6902AB23A8DDFE00C8352E /* mainViewController.swift */; };
+		EA76FFA923F6339D00DEC86E /* assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA76FFA823F6339D00DEC86E /* assets.xcassets */; };
 		EA7F6A8E23AE09A400DF7F95 /* infoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA7F6A8D23AE09A400DF7F95 /* infoTableViewController.swift */; };
 		EAB32AAE23F6014B00BC0B66 /* LaunchScreenRPT.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EAB32AAD23F6014B00BC0B66 /* LaunchScreenRPT.storyboard */; };
 /* End PBXBuildFile section */
@@ -19,11 +19,11 @@
 /* Begin PBXFileReference section */
 		EA69029223A8A8F000C8352E /* RicePurityTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RicePurityTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA69029523A8A8F000C8352E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		EA69029C23A8A8F200C8352E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA6902A123A8A8F200C8352E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EA6902A723A8AC8800C8352E /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		EA6902A923A8AFF300C8352E /* tableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tableViewController.swift; sourceTree = "<group>"; };
 		EA6902AB23A8DDFE00C8352E /* mainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainViewController.swift; sourceTree = "<group>"; };
+		EA76FFA823F6339D00DEC86E /* assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = assets.xcassets; sourceTree = "<group>"; };
 		EA7F6A8D23AE09A400DF7F95 /* infoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = infoTableViewController.swift; sourceTree = "<group>"; };
 		EAB32AAD23F6014B00BC0B66 /* LaunchScreenRPT.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreenRPT.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,9 +63,9 @@
 				EA7F6A8D23AE09A400DF7F95 /* infoTableViewController.swift */,
 				EA6902AB23A8DDFE00C8352E /* mainViewController.swift */,
 				EA6902A723A8AC8800C8352E /* Storyboard.storyboard */,
-				EA69029C23A8A8F200C8352E /* Assets.xcassets */,
 				EAB32AAD23F6014B00BC0B66 /* LaunchScreenRPT.storyboard */,
 				EA6902A123A8A8F200C8352E /* Info.plist */,
+				EA76FFA823F6339D00DEC86E /* assets.xcassets */,
 			);
 			path = RicePurityTest;
 			sourceTree = "<group>";
@@ -128,9 +128,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA69029D23A8A8F200C8352E /* Assets.xcassets in Resources */,
 				EAB32AAE23F6014B00BC0B66 /* LaunchScreenRPT.storyboard in Resources */,
 				EA6902A823A8AC8800C8352E /* Storyboard.storyboard in Resources */,
+				EA76FFA923F6339D00DEC86E /* assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +279,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kaungkhantkyaw.RicePurityTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -298,6 +299,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = kaungkhantkyaw.RicePurityTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
